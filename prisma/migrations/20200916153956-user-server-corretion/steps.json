@@ -1,0 +1,65 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Server",
+      "field": "UserServer",
+      "type": "UserServer",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "UserServer",
+      "field": "server",
+      "type": "Server",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "UserServer",
+          "field": "server"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "UserServer",
+          "field": "server"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[serverId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "UserServer",
+          "field": "server"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "UserServer",
+      "field": "serverId",
+      "type": "Int",
+      "arity": "Required"
+    }
+  ]
+}

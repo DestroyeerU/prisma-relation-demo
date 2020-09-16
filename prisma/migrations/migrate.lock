@@ -1,0 +1,6 @@
+# Prisma Migrate lockfile v1
+
+20200916151642-create-users
+20200916152810-create-servers
+20200916153607-create-user-server
+20200916153956-user-server-corretion
